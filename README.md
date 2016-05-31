@@ -8,7 +8,7 @@ Last updated: 31st May 2016
 
 ----------
 
-The program files are saved within the folder HelloWorldC and the tests are contained within BowlingGameTests.
+The program files are saved within the folder BowlingGame and the tests are contained within BowlingGameTests.
 
 There are three classes of:
 - BowlingGame
