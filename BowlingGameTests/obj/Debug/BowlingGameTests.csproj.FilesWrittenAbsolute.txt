@@ -1,0 +1,8 @@
+/Users/Mat/Projects/HelloWorldC/BowlingGameTests/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/Mat/Projects/HelloWorldC/BowlingGameTests/bin/Debug/BowlingGameTests.dll.mdb
+/Users/Mat/Projects/HelloWorldC/BowlingGameTests/bin/Debug/BowlingGameTests.dll
+/Users/Mat/Projects/HelloWorldC/BowlingGameTests/obj/Debug/BowlingGameTests.dll
+/Users/Mat/Projects/HelloWorldC/BowlingGameTests/obj/Debug/BowlingGameTests.dll.mdb
+/Users/Mat/Projects/HelloWorldC/BowlingGameTests/bin/Debug/nunit.framework.dll
+/Users/Mat/Projects/HelloWorldC/BowlingGameTests/bin/Debug/HelloWorldC.exe
+/Users/Mat/Projects/HelloWorldC/BowlingGameTests/bin/Debug/HelloWorldC.exe.mdb
