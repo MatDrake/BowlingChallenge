@@ -6,6 +6,7 @@ namespace BowlingGame
 	{
 		public string score;
 		private int scoreNumber;
+		private int scoreNumberCheck;
 
 		public void StartGame(BowlingScore player)
 		{
@@ -51,12 +52,41 @@ namespace BowlingGame
 		private void GetScore()
 		{
 			string score = Console.ReadLine ();
-			StringToInt (score);
+			CheckInputInt (score);
 		}
 
 		private void TotalScore(BowlingScore player)
 		{
 			Console.WriteLine ("Your total score is: " + player.totalScore);
+		}
+
+		private void CheckInputInt(string inputText)
+		{
+			int inputInt = 0;
+			bool successfullyParsed = int.TryParse(inputText, out inputInt);
+			if (successfullyParsed) 
+			{
+				scoreNumberCheck = Int32.Parse(inputText);
+				CheckValidScore (scoreNumberCheck, inputText);
+			} 
+			else 
+			{
+				Console.WriteLine ("Please enter a number between 0 and 10.");
+				GetScore ();
+			}
+		}
+	
+		private void CheckValidScore(int scoreNumber, string inputText)
+		{
+			if (scoreNumber >= 0 && scoreNumber <= 10) 
+			{
+				StringToInt (inputText);
+			} 
+			else 
+			{
+				Console.WriteLine ("Please enter a number between 0 and 10.");
+				GetScore ();
+			}
 		}
 	}
 }

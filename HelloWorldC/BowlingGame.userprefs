@@ -1,10 +1,10 @@
 ﻿<Properties StartupItem="BowlingGame.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="BowlingScore.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="BowlingSets.cs">
     <Files>
       <File FileName="Program.cs" Line="1" Column="1" />
       <File FileName="BowlingSets.cs" Line="1" Column="1" />
-      <File FileName="BowlingScore.cs" Line="25" Column="25" />
+      <File FileName="BowlingScore.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

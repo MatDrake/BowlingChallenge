@@ -6,3 +6,11 @@
 /Users/Mat/Projects/HelloWorldC/BowlingGameTests/bin/Debug/nunit.framework.dll
 /Users/Mat/Projects/HelloWorldC/BowlingGameTests/bin/Debug/HelloWorldC.exe
 /Users/Mat/Projects/HelloWorldC/BowlingGameTests/bin/Debug/HelloWorldC.exe.mdb
+/Users/Mat/Documents/gittest/BowlingChallenge/BowlingGameTests/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/Mat/Documents/gittest/BowlingChallenge/BowlingGameTests/bin/Debug/BowlingGameTests.dll.mdb
+/Users/Mat/Documents/gittest/BowlingChallenge/BowlingGameTests/bin/Debug/BowlingGameTests.dll
+/Users/Mat/Documents/gittest/BowlingChallenge/BowlingGameTests/obj/Debug/BowlingGameTests.dll
+/Users/Mat/Documents/gittest/BowlingChallenge/BowlingGameTests/obj/Debug/BowlingGameTests.dll.mdb
+/Users/Mat/Documents/gittest/BowlingChallenge/BowlingGameTests/bin/Debug/nunit.framework.dll
+/Users/Mat/Documents/gittest/BowlingChallenge/BowlingGameTests/bin/Debug/HelloWorldC.exe
+/Users/Mat/Documents/gittest/BowlingChallenge/BowlingGameTests/bin/Debug/HelloWorldC.exe.mdb

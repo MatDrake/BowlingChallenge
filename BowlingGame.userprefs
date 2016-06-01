@@ -1,16 +1,10 @@
-﻿<Properties StartupItem="HelloWorldC/BowlingGame.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="HelloWorldC/BowlingSets.cs">
-    <Files>
-      <File FileName="BowlingGameTests/Test.cs" Line="10" Column="39" />
-      <File FileName="HelloWorldC/Program.cs" Line="3" Column="22" />
-      <File FileName="HelloWorldC/BowlingScore.cs" Line="87" Column="26" />
-      <File FileName="HelloWorldC/BowlingSets.cs" Line="42" Column="4" />
-    </Files>
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="MonoDevelop.NUnit.TestPad">
         <State name="__root__">
-          <Node name="BowlingGame" selected="True" />
+          <Node name="BowlingGame" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>
@@ -19,4 +13,8 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <StartupItems>
+    <String>HelloWorldC/BowlingGame.csproj</String>
+    <String>BowlingGameTests/BowlingGameTests.csproj</String>
+  </StartupItems>
 </Properties>

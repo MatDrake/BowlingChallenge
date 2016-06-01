@@ -205,5 +205,6 @@
 				playerOne.RollTwo (spareRollTwo);
 				Assert.AreEqual (1, playerOne.bonusRollCounter);
 			}
-		}
+
+	}
 }
