@@ -4,7 +4,9 @@ A C# console application designed to help track a user's score for a game of 10-
 
 Author: Mat Drake
 
-Last updated: 31st May 2016
+Created: 31st May 2016
+
+Last updated: 1st June 2016
 
 ----------
 
