@@ -23,4 +23,6 @@ Running the application will prompt you to input the amount of pins you knocked 
 
 Work in Progress:
 
-Currently the input is not conditioned to only accept numbers between 0 - 10 and errors can be thrown from the application not working as intended if something else is entered. It is intended for this to be resolved in the next update.
+Currently there is no conditioning in place to verify that a valid number of pins is entered for a set; you can enter 9 pins for your first roll and 9 pins for a second roll of a set.
+
+It is intended for this to be resolved in the next update.
