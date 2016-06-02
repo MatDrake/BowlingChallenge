@@ -23,7 +23,7 @@ namespace BowlingGame
 			{
 				do {
 					Console.WriteLine ("Enter your score for your bonus roll");
-					GetScore ();
+					GetScore (player);
 					player.BonusRoll (scoreNumber);
 					TotalScore (player);
 				} while(player.bonusRollCounter > 0);
@@ -33,14 +33,14 @@ namespace BowlingGame
 		private void GetScoreRollOne(BowlingScore player)
 		{
 			Console.WriteLine("Set number: " + player.setNumber + ". Please enter your score for roll one");
-			GetScore ();
+			GetScore (player);
 			player.RollOne (scoreNumber);
 		}
 
 		private void GetScoreRollTwo(BowlingScore player)
 		{
 			Console.WriteLine("Set number: " + player.setNumber + ". Please enter your score for roll two");
-			GetScore ();
+			GetScore (player);
 			player.RollTwo (scoreNumber);
 		}
 
@@ -49,10 +49,10 @@ namespace BowlingGame
 			scoreNumber = Int32.Parse (score);
 		}
 
-		private void GetScore()
+		private void GetScore(BowlingScore player)
 		{
 			string score = Console.ReadLine ();
-			CheckInputInt (score);
+			CheckInputInt (score, player);
 		}
 
 		private void TotalScore(BowlingScore player)
@@ -60,32 +60,45 @@ namespace BowlingGame
 			Console.WriteLine ("Your total score is: " + player.totalScore);
 		}
 
-		private void CheckInputInt(string inputText)
+		private void CheckInputInt(string inputText, BowlingScore player)
 		{
 			int inputInt = 0;
 			bool successfullyParsed = int.TryParse(inputText, out inputInt);
 			if (successfullyParsed) 
 			{
 				scoreNumberCheck = Int32.Parse(inputText);
-				CheckValidScore (scoreNumberCheck, inputText);
+				CheckValidScore (scoreNumberCheck, inputText, player);
 			} 
 			else 
 			{
 				Console.WriteLine ("Please enter a number between 0 and 10.");
-				GetScore ();
+				GetScore (player);
 			}
 		}
 	
-		private void CheckValidScore(int scoreNumber, string inputText)
+		private void CheckValidScore(int scoreNumberCheck, string inputText, BowlingScore player)
 		{
 			if (scoreNumber >= 0 && scoreNumber <= 10) 
 			{
-				StringToInt (inputText);
+				CheckValidRollTwo (player, inputText, scoreNumberCheck);
 			} 
 			else 
 			{
 				Console.WriteLine ("Please enter a number between 0 and 10.");
-				GetScore ();
+				GetScore (player);
+			}
+		}
+
+		private void CheckValidRollTwo(BowlingScore player, string inputText, int scoreNumberCheck)
+		{
+			if ((scoreNumberCheck + player.setsFirstRoll[player.setNumber - 1]) > 10) // WIP - Only valid scores can now be entered, but an exception is thrown during bonus rolls as index of array is out of range.
+			{
+				Console.WriteLine ("Test");
+				GetScore (player);
+			}
+			else
+			{
+				StringToInt (inputText);
 			}
 		}
 	}

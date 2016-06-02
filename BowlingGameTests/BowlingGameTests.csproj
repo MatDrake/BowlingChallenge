@@ -41,7 +41,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HelloWorldC\BowlingGame.csproj">
+    <ProjectReference Include="..\BowlingGame\BowlingGame.csproj">
       <Project>{FF506F62-FBDA-42FD-9608-30860E6862C6}</Project>
       <Name>BowlingGame</Name>
     </ProjectReference>
