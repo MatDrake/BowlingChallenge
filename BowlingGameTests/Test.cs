@@ -27,23 +27,23 @@
 			public void SaveScoreForRollOne ()
 			{
 				playerOne.RollOne (randomNonStrikeRoll);
-				Assert.AreEqual (randomNonStrikeRoll, playerOne.setsFirstRoll [playerOne.setNumber - 1]);
+				Assert.AreEqual (randomNonStrikeRoll, playerOne.setsFirstRoll [playerOne.setNumber]);
 		    }
 
 			[Test()]
 			public void SaveScoreForRollTwo ()
 			{
 				playerOne.RollTwo (randomNonStrikeRoll);
-				Assert.AreEqual (randomNonStrikeRoll, playerOne.setsSecondRoll [playerOne.setNumber -2]);
+				Assert.AreEqual (randomNonStrikeRoll, playerOne.setsSecondRoll [playerOne.setNumber - 1]);
 			}
 
 			[Test()]
 			public void IncreaseSetNumberOnSecondRoll ()
 			{
-				Assert.AreEqual (1, playerOne.setNumber);
+				Assert.AreEqual (0, playerOne.setNumber);
 
 				playerOne.RollTwo (randomNonStrikeRoll);
-				Assert.AreEqual (2, playerOne.setNumber);
+				Assert.AreEqual (1, playerOne.setNumber);
 			}
 
 			[Test()]
@@ -59,10 +59,10 @@
 			[Test()]
 			public void StrikesIncreaseSetNumber()
 			{
-				Assert.AreEqual (1, playerOne.setNumber);
+				Assert.AreEqual (0, playerOne.setNumber);
 
 				playerOne.RollOne (strike);
-				Assert.AreEqual (2, playerOne.setNumber);
+				Assert.AreEqual (1, playerOne.setNumber);
 			}
 
 			[Test()]

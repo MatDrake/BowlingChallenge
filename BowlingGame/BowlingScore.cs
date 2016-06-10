@@ -19,7 +19,7 @@ namespace BowlingGame
 		    setsFirstRoll = new int[10];
 			setsSecondRoll = new int[10];
 			bonusRoll = new int[2];
-			setNumber = 1;
+			setNumber = 0;
 			totalScore = 0;
 			strikeCounter = 0;
 			bonusRollCounter = 0;
@@ -27,7 +27,7 @@ namespace BowlingGame
 
 		public void RollOne(int roll) 
 		{
-			setsFirstRoll [setNumber - 1] = roll;
+			setsFirstRoll [setNumber] = roll;
 			AddToTotalScore (roll);
 			StrikeCalculations (roll);
 			StrikeSetIncrease (roll);
@@ -36,11 +36,14 @@ namespace BowlingGame
 			
 		public void RollTwo(int roll)
 		{
-			setsSecondRoll [setNumber - 1] = roll;
+			setsSecondRoll [setNumber] = roll;
 			AddToTotalScore (roll);
 			StrikeCalculations (roll);
 			IsSpare(roll);
-			IncreaseSetNumber();
+			if (setNumber < 10) 
+			{
+				IncreaseSetNumber ();
+			}
 			IsBonusRoll ();
 		}
 
@@ -53,6 +56,7 @@ namespace BowlingGame
 
 		private void IncreaseSetNumber()
 		{
+			
 			setNumber += 1;
 		}
 
@@ -69,9 +73,9 @@ namespace BowlingGame
 
 		private void StrikeSetIncrease(int roll)
 		{
-			if (roll == 10) 
+			if (roll == 10 && setNumber < 10) 
 			{
-				setsSecondRoll [setNumber - 1] = 0;
+				setsSecondRoll [setNumber] = 0;
 				IncreaseSetNumber ();
 				StrikeCounterIncrease ();
 			}
@@ -116,7 +120,7 @@ namespace BowlingGame
 			
 		private void IsSpare(int roll)
 		{
-			if ((setsFirstRoll [setNumber - 1] + roll) == 10) {
+			if ((setsFirstRoll [setNumber] + roll) == 10) {
 				strikeCounter += 1;
 			}
 		}

@@ -5,6 +5,7 @@ namespace BowlingGame
 	public class BowlingSets
 	{
 		public string score;
+		public int currentSetNumber;
 		private int scoreNumber;
 		private int scoreNumberCheck;
 
@@ -18,7 +19,7 @@ namespace BowlingGame
 					GetScoreRollTwo(player);
 					TotalScore(player);
 				}
-			} while(player.setNumber < 11);
+			} while(player.setNumber < 10);
 			if (player.bonusRollCounter > 0) 
 			{
 				do {
@@ -30,16 +31,22 @@ namespace BowlingGame
 			}
 		}
 
+		public int currentSet(BowlingScore player)
+		{
+			currentSetNumber = player.setNumber + 1;
+			return currentSetNumber;
+		}
+
 		private void GetScoreRollOne(BowlingScore player)
 		{
-			Console.WriteLine("Set number: " + player.setNumber + ". Please enter your score for roll one");
+			Console.WriteLine("Set number: " + currentSet(player) + ". Please enter your score for roll one");
 			GetScore (player);
 			player.RollOne (scoreNumber);
 		}
 
 		private void GetScoreRollTwo(BowlingScore player)
 		{
-			Console.WriteLine("Set number: " + player.setNumber + ". Please enter your score for roll two");
+			Console.WriteLine("Set number: " + currentSet(player) + ". Please enter your score for roll two");
 			GetScore (player);
 			player.RollTwo (scoreNumber);
 		}
@@ -91,9 +98,13 @@ namespace BowlingGame
 
 		private void CheckValidRollTwo(BowlingScore player, string inputText, int scoreNumberCheck)
 		{
-			if ((scoreNumberCheck + player.setsFirstRoll[player.setNumber - 1]) > 10) // WIP - Only valid scores can now be entered, but an exception is thrown during bonus rolls as index of array is out of range.
+			if (player.bonusRollCounter != 0 && scoreNumberCheck <= 10)
 			{
-				Console.WriteLine ("Test");
+				StringToInt (inputText);
+			}
+			else if((scoreNumberCheck + player.setsFirstRoll[player.setNumber]) > 10)
+			{
+				Console.WriteLine ("Invalid roll: set score exceeds 10. Please re-enter your score.");
 				GetScore (player);
 			}
 			else

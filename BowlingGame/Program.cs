@@ -13,6 +13,5 @@ namespace BowlingGame
 			gameSets.StartGame (playerOne);
 		}
 
-
 	}
 }
