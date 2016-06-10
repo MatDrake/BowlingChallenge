@@ -6,7 +6,7 @@ Author: Mat Drake
 
 Created: 31st May 2016
 
-Last updated: 3rd June 2016
+Last updated: 10th June 2016
 
 ----------
 
@@ -25,6 +25,6 @@ Running the application will prompt you to input the amount of pins you knocked 
 
 Work in Progress:
 
-Currently there is no conditioning in place to verify that a valid number of pins is entered for a set; you can enter 9 pins for your first roll and 9 pins for a second roll of a set.
+Currently you are able to enter negative rolls and this will set your score according to the number entered (i.e. -10 will reduce your score by 10). This will then cause the program to loop endlessly, not accepting any input and warning you that a number between 1 - 10 needs to be entered.
 
-It is intended for this to be resolved in the next update.
+This is intended to be resolved in the next update.
