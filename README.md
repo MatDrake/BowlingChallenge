@@ -29,8 +29,13 @@ Now the validation is working as intended, the next feature being worked on is h
 
 |X|7,/|7,2|7,-|X|1,5|4,4|4,/|9,-|X||X X
 
-X  being a strike
-/  being a spare
--  being a miss
-|  being the frame boundries
-|| being the end of the 10th set and start of bonus balls
+
+ 'X'  being a strike
+ 
+ '/'  being a spare
+ 
+ '-'  being a miss
+ 
+ '|'  being the frame boundries
+ 
+ '||' being the end of the 10th set and start of bonus balls
