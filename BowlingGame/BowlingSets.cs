@@ -85,7 +85,7 @@ namespace BowlingGame
 	
 		private void CheckValidScore(int scoreNumberCheck, string inputText, BowlingScore player)
 		{
-			if (scoreNumber >= 0 && scoreNumber <= 10) 
+			if (scoreNumberCheck >= 0 && scoreNumberCheck <= 10) 
 			{
 				CheckValidRollTwo (player, inputText, scoreNumberCheck);
 			} 
