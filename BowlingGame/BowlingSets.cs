@@ -5,6 +5,7 @@ namespace BowlingGame
 	public class BowlingSets
 	{
 		public string score;
+		public string scoreDisplay;
 		public int currentSetNumber;
 		private int scoreNumber;
 		private int scoreNumberCheck;
@@ -41,6 +42,7 @@ namespace BowlingGame
 		{
 			Console.WriteLine("Set number: " + currentSet(player) + ". Please enter your score for roll one");
 			GetScore (player);
+			SetDisplay(player);
 			player.RollOne (scoreNumber);
 		}
 
@@ -48,6 +50,7 @@ namespace BowlingGame
 		{
 			Console.WriteLine("Set number: " + currentSet(player) + ". Please enter your score for roll two");
 			GetScore (player);
+			SetDisplay(player);
 			player.RollTwo (scoreNumber);
 		}
 
@@ -58,13 +61,31 @@ namespace BowlingGame
 
 		private void GetScore(BowlingScore player)
 		{
-			string score = Console.ReadLine ();
+			score = Console.ReadLine ();
 			CheckInputInt (score, player);
 		}
 
 		private void TotalScore(BowlingScore player)
 		{
 			Console.WriteLine ("Your total score is: " + player.totalScore);
+			Console.WriteLine (scoreDisplay);
+		}
+
+		private void SetDisplay(BowlingScore player)
+		{
+			if (scoreNumberCheck == 10) 
+			{
+				scoreDisplay += "X";
+			} 
+			else if ((scoreNumberCheck + player.setsFirstRoll [player.setNumber]) == 10) 
+			{
+				scoreDisplay += "/";
+			}
+			else 
+			{
+				Console.WriteLine (player.setsFirstRoll [player.setNumber]);
+				scoreDisplay += score;
+			}
 		}
 
 		private void CheckInputInt(string inputText, BowlingScore player)
