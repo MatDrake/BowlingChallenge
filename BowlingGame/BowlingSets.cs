@@ -77,6 +77,10 @@ namespace BowlingGame
 			{
 				scoreDisplay += "X";
 			} 
+			else if (scoreNumberCheck == 0) 
+			{
+				scoreDisplay += "-";
+			}
 			else if ((scoreNumberCheck + player.setsFirstRoll [player.setNumber]) == 10) 
 			{
 				scoreDisplay += "/";
