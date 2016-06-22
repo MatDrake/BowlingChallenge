@@ -7,6 +7,7 @@ namespace BowlingGame
 		public string score;
 		public string scoreDisplay;
 		public int currentSetNumber;
+		public int rollNumber;
 		private int scoreNumber;
 		private int scoreNumberCheck;
 
@@ -21,11 +22,13 @@ namespace BowlingGame
 					TotalScore(player);
 				}
 			} while(player.setNumber < 10);
+			scoreDisplay += '|';
 			if (player.bonusRollCounter > 0) 
 			{
 				do {
 					Console.WriteLine ("Enter your score for your bonus roll");
 					GetScore (player);
+					SetDisplay(player);
 					player.BonusRoll (scoreNumber);
 					TotalScore (player);
 				} while(player.bonusRollCounter > 0);
@@ -41,6 +44,7 @@ namespace BowlingGame
 		private void GetScoreRollOne(BowlingScore player)
 		{
 			Console.WriteLine("Set number: " + currentSet(player) + ". Please enter your score for roll one");
+			rollNumber = 1;
 			GetScore (player);
 			SetDisplay(player);
 			player.RollOne (scoreNumber);
@@ -49,6 +53,7 @@ namespace BowlingGame
 		private void GetScoreRollTwo(BowlingScore player)
 		{
 			Console.WriteLine("Set number: " + currentSet(player) + ". Please enter your score for roll two");
+			rollNumber = 2;
 			GetScore (player);
 			SetDisplay(player);
 			player.RollTwo (scoreNumber);
@@ -75,20 +80,30 @@ namespace BowlingGame
 		{
 			if (scoreNumberCheck == 10) 
 			{
-				scoreDisplay += "X";
+				scoreDisplay += "X|";
 			} 
 			else if (scoreNumberCheck == 0) 
 			{
 				scoreDisplay += "-";
+				IsEndOfFrame ();
 			}
 			else if ((scoreNumberCheck + player.setsFirstRoll [player.setNumber]) == 10) 
 			{
 				scoreDisplay += "/";
+				IsEndOfFrame ();
 			}
-			else 
+			else
 			{
-				Console.WriteLine (player.setsFirstRoll [player.setNumber]);
-				scoreDisplay += score;
+				scoreDisplay += scoreNumberCheck;
+				IsEndOfFrame ();
+			}
+		}
+
+		private void IsEndOfFrame()
+		{
+			if (rollNumber == 2) 
+			{
+				scoreDisplay += '|';
 			}
 		}
 
