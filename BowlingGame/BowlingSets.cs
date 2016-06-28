@@ -27,8 +27,9 @@ namespace BowlingGame
 			{
 				do {
 					Console.WriteLine ("Enter your score for your bonus roll");
+					Console.WriteLine(player.setNumber);
 					GetScore (player);
-					SetDisplay(player);
+					SetDisplayBonus(player);
 					player.BonusRoll (scoreNumber);
 					TotalScore (player);
 				} while(player.bonusRollCounter > 0);
@@ -98,11 +99,20 @@ namespace BowlingGame
 			}
 		}
 
+		private void SetDisplayBonus(BowlingScore player)
+		{
+			scoreDisplay += scoreNumberCheck; // WIP - Getting commas to not show when rolling a second ball on a bonus set.
+		}
+
 		private void IsEndOfFrame()
 		{
 			if (rollNumber == 2) 
 			{
 				scoreDisplay += '|';
+			} 
+			else 
+			{
+				scoreDisplay += ",";
 			}
 		}
 
