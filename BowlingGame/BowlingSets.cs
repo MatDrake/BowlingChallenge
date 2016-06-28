@@ -78,7 +78,7 @@ namespace BowlingGame
 
 		private void SetDisplay(BowlingScore player)
 		{
-			if (scoreNumberCheck == 10) 
+			if (scoreNumberCheck == 10 && rollNumber == 1) 
 			{
 				scoreDisplay += "X|";
 			} 
@@ -89,8 +89,7 @@ namespace BowlingGame
 			}
 			else if ((scoreNumberCheck + player.setsFirstRoll [player.setNumber]) == 10) 
 			{
-				scoreDisplay += "/";
-				IsEndOfFrame ();
+				scoreDisplay += "/|";
 			}
 			else
 			{
