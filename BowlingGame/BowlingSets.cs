@@ -27,7 +27,6 @@ namespace BowlingGame
 			{
 				do {
 					Console.WriteLine ("Enter your score for your bonus roll");
-					Console.WriteLine(player.setNumber);
 					GetScore (player);
 					SetDisplayBonus(player);
 					player.BonusRoll (scoreNumber);
@@ -101,7 +100,24 @@ namespace BowlingGame
 
 		private void SetDisplayBonus(BowlingScore player)
 		{
-			scoreDisplay += scoreNumberCheck; // WIP - Getting commas to not show when rolling a second ball on a bonus set.
+			if (scoreNumberCheck == 10) 
+			{
+				scoreDisplay += "X";
+				IsFirstRollOfTwoBonusRolls (player);
+			} 
+			else 
+			{
+				scoreDisplay += $"{scoreNumberCheck}";
+				IsFirstRollOfTwoBonusRolls (player);
+			}
+		}
+
+		private void IsFirstRollOfTwoBonusRolls(BowlingScore player)
+		{
+			if (player.bonusRollCounter == 2) 
+			{
+				scoreDisplay += ",";
+			}
 		}
 
 		private void IsEndOfFrame()
