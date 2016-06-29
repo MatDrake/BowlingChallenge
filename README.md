@@ -6,7 +6,7 @@ Author: Mat Drake
 
 Created: 31st May 2016
 
-Last updated: 28th June 2016
+Last updated: 29th June 2016
 
 ----------
 
@@ -25,17 +25,4 @@ Running the application will prompt you to input the amount of pins you knocked 
 
 Work in Progress:
 
-Now the validation is working as intended, the next feature being worked on is have the total score displayed alongside your previous rolls for each set. i.e.:
-
-|X|7,/|7,2|7,-|X|1,5|4,4|4,/|9,-|X||X X
-
-
- 'X'  being a strike
- 
- '/'  being a spare
- 
- '-'  being a miss
- 
- '|'  being the frame boundries
- 
- '||' being the end of the 10th set and start of bonus balls
+Now that there is a BowlingDisplay method in BowlingSets that correctly outputs a string displaying a player's rolls for previous sets, this is to be extracted in to a separate class to keep in line with SRP.
