@@ -16,7 +16,7 @@ namespace BowlingGame
 
 		public BowlingScore ()
 		{
-		    setsFirstRoll = new int[10];
+		    setsFirstRoll = new int[11];
 			setsSecondRoll = new int[10];
 			bonusRoll = new int[2];
 			setNumber = 0;

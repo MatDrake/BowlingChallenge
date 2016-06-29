@@ -5,7 +5,9 @@ namespace BowlingGame
 	public class BowlingSets
 	{
 		public string score;
+		public string scoreDisplay;
 		public int currentSetNumber;
+		public int rollNumber;
 		private int scoreNumber;
 		private int scoreNumberCheck;
 
@@ -20,11 +22,13 @@ namespace BowlingGame
 					TotalScore(player);
 				}
 			} while(player.setNumber < 10);
+			scoreDisplay += '|';
 			if (player.bonusRollCounter > 0) 
 			{
 				do {
 					Console.WriteLine ("Enter your score for your bonus roll");
 					GetScore (player);
+					SetDisplayBonus(player);
 					player.BonusRoll (scoreNumber);
 					TotalScore (player);
 				} while(player.bonusRollCounter > 0);
@@ -40,14 +44,18 @@ namespace BowlingGame
 		private void GetScoreRollOne(BowlingScore player)
 		{
 			Console.WriteLine("Set number: " + currentSet(player) + ". Please enter your score for roll one");
+			rollNumber = 1;
 			GetScore (player);
+			SetDisplay(player);
 			player.RollOne (scoreNumber);
 		}
 
 		private void GetScoreRollTwo(BowlingScore player)
 		{
 			Console.WriteLine("Set number: " + currentSet(player) + ". Please enter your score for roll two");
+			rollNumber = 2;
 			GetScore (player);
+			SetDisplay(player);
 			player.RollTwo (scoreNumber);
 		}
 
@@ -58,13 +66,70 @@ namespace BowlingGame
 
 		private void GetScore(BowlingScore player)
 		{
-			string score = Console.ReadLine ();
+			score = Console.ReadLine ();
 			CheckInputInt (score, player);
 		}
 
 		private void TotalScore(BowlingScore player)
 		{
 			Console.WriteLine ("Your total score is: " + player.totalScore);
+			Console.WriteLine (scoreDisplay);
+		}
+
+		private void SetDisplay(BowlingScore player)
+		{
+			if (scoreNumberCheck == 10 && rollNumber == 1) 
+			{
+				scoreDisplay += "X|";
+			} 
+			else if (scoreNumberCheck == 0) 
+			{
+				scoreDisplay += "-";
+				IsEndOfFrame ();
+			}
+			else if ((scoreNumberCheck + player.setsFirstRoll [player.setNumber]) == 10) 
+			{
+				scoreDisplay += "/|";
+			}
+			else
+			{
+				scoreDisplay += scoreNumberCheck;
+				IsEndOfFrame ();
+			}
+		}
+
+		private void SetDisplayBonus(BowlingScore player)
+		{
+			if (scoreNumberCheck == 10) 
+			{
+				scoreDisplay += "X";
+				IsFirstRollOfTwoBonusRolls (player);
+			} 
+			else 
+			{
+				scoreDisplay += $"{scoreNumberCheck}";
+				IsFirstRollOfTwoBonusRolls (player);
+			}
+		}
+
+		private void IsFirstRollOfTwoBonusRolls(BowlingScore player)
+		{
+			if (player.bonusRollCounter == 2) 
+			{
+				scoreDisplay += ",";
+			}
+		}
+
+		private void IsEndOfFrame()
+		{
+			if (rollNumber == 2) 
+			{
+				scoreDisplay += '|';
+			} 
+			else 
+			{
+				scoreDisplay += ",";
+			}
 		}
 
 		private void CheckInputInt(string inputText, BowlingScore player)
