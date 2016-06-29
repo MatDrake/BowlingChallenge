@@ -28,7 +28,7 @@ namespace BowlingGame
 				do {
 					Console.WriteLine ("Enter your score for your bonus roll");
 					GetScore (player);
-					SetDisplayBonus(player);
+					SetDisplayBonus(player, scoreDisplay);
 					player.BonusRoll (scoreNumber);
 					TotalScore (player);
 				} while(player.bonusRollCounter > 0);
@@ -98,25 +98,17 @@ namespace BowlingGame
 			}
 		}
 
-		private void SetDisplayBonus(BowlingScore player)
+		private void SetDisplayBonus(BowlingScore player, BowlingDisplay display)
 		{
 			if (scoreNumberCheck == 10) 
 			{
 				scoreDisplay += "X";
-				IsFirstRollOfTwoBonusRolls (player);
+				display.IsFirstRollOfTwoBonusRolls (player);
 			} 
 			else 
 			{
 				scoreDisplay += $"{scoreNumberCheck}";
-				IsFirstRollOfTwoBonusRolls (player);
-			}
-		}
-
-		private void IsFirstRollOfTwoBonusRolls(BowlingScore player)
-		{
-			if (player.bonusRollCounter == 2) 
-			{
-				scoreDisplay += ",";
+				display.IsFirstRollOfTwoBonusRolls (player);
 			}
 		}
 

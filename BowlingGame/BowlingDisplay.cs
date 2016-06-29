@@ -4,12 +4,14 @@ namespace BowlingGame
 {
 	public class BowlingDisplay
 	{
-		public string playerScoreDisplay;
+		public string scoreDisplay; 
 
-		public string ScoreDisplay(BowlingSets playerSets)
+		private void IsFirstRollOfTwoBonusRolls(BowlingScore player)
 		{
-			playerScoreDisplay += playerSets.score;
-			return playerScoreDisplay;
+			if (player.bonusRollCounter == 2) 
+			{
+				scoreDisplay += ",";  // WIP Extracting BowlingDisplay elements in to a separate class. Starting at the smallest steps, currently bringing over the variables needed.
+			}
 		}
 	}
 }
