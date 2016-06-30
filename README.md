@@ -6,7 +6,7 @@ Author: Mat Drake
 
 Created: 31st May 2016
 
-Last updated: 29th June 2016
+Last updated: 30th June 2016
 
 ----------
 
@@ -22,7 +22,3 @@ BowlingGame contains the main method that runs on launch, with BowlingSets manag
 Running the application will prompt you to input the amount of pins you knocked down for each roll. This needs to be entered as a number between 0 - 10. You will be told which roll of which set you are entering the score for and your total score will be displayed each time you enter a new roll.
 
 ----------
-
-Work in Progress:
-
-Now that there is a BowlingDisplay method in BowlingSets that correctly outputs a string displaying a player's rolls for previous sets, this is to be extracted in to a separate class to keep in line with SRP.
