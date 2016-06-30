@@ -10,7 +10,8 @@ namespace BowlingGame
 		{
 			BowlingScore playerOne = new BowlingScore ();
 			BowlingSets gameSets = new BowlingSets ();
-			gameSets.StartGame (playerOne);
+			BowlingDisplay display = new BowlingDisplay ();
+			gameSets.StartGame (playerOne, display);
 		}
 
 	}
